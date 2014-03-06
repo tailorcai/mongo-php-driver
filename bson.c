@@ -1030,7 +1030,8 @@ char* bson_to_zval(char *buf, HashTable *result, mongo_bson_conversion_options *
 				break;
 			}
 
-			case BSON_LONG: {
+			case BSON_LONG:
+			case BSON_ULONG: {
 				int force_as_object = 0;
 
 				if (options && options->flag_cmd_cursor_as_int64 && options->level == 1 && strcmp(name, "id") == 0) {
